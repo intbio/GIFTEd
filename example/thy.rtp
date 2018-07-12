@@ -1,0 +1,84 @@
+[ NTHY ]
+
+  [ atoms ]
+	  O4' OG3C51   -0.400  0
+	  C1' CG3C51    0.110  1
+	 H12'  HGA1    0.090  2
+	  C4' CG3C51    0.110  3
+	 H42'  HGA1    0.090  4
+	   N1 NG2R61   -0.340  5
+	   C6 CG2R62    0.170  6
+	   H6 HGR62    0.170  7
+	   C2 CG2R63    0.510  8
+	   O2 OG2D4   -0.410  9
+	   N3 NG2R61   -0.460 10
+	   H3  HGP1    0.360 11
+	   C4 CG2R63    0.500 12
+	   O4 OG2D4   -0.450 13
+	   C5 CG2R62   -0.150 14
+	  C5M CG331   -0.110 15
+	  H51  HGA3    0.070 16
+	  H52  HGA3    0.070 17
+	  H53  HGA3    0.070 18
+	  C2' CG3C52   -0.180 19
+	 H21'  HGA2    0.090 20
+	 H22'  HGA2    0.090 21
+	  C3' CG3C51    0.010 22
+	 H31'  HGA1    0.090 23
+	  O3' OG303   -0.570 24
+	    P   PG1    1.500 25
+	  O1P OG2P1   -0.780 26
+	  O2P OG2P1   -0.780 27
+	  O3P OG303   -0.570 28
+	  C3T CG331   -0.170 29
+	 H3T1  HGA3    0.090 30
+	 H3T2  HGA3    0.090 31
+	 H3T3  HGA3    0.090 32
+	  C5' CG321    0.050 33
+	 H51'  HGA2    0.090 34
+	 H52'  HGA2    0.090 35
+	  H5T  HGP1    0.420 36
+	  O5' OG311   -0.650 37
+  [ bonds ]
+	  C1'   O4'
+	  C1'   C2'
+	  C2'   C3'
+	  C3'   C4'
+	  C4'   O4'
+	  C3'   O3'
+	  C1'  H12'
+	  C2'  H21'
+	  C2'  H22'
+	  C3'  H31'
+	  C4'  H42'
+	  O3'     P
+	    P   O1P
+	    P   O2P
+	    P   O3P
+	  O3P   C3T
+	  C3T  H3T1
+	  C3T  H3T2
+	  C3T  H3T3
+	  C4'   C5'
+	  C5'  H51'
+	  C5'  H52'
+	  C5'   O5'
+	  O5'   H5T
+	  C1'    N1
+	   N1    C2
+	   N1    C6
+	   C2    N3
+	   N3    H3
+	   N3    C4
+	   C4    C5
+	   C5   C5M
+	   C6    H6
+	  C5M   H51
+	  C5M   H52
+	  C5M   H53
+	   C2    O2
+	   C4    O4
+	   C5    C6
+  [ impropers ]
+	   C2    N1    N3    O2
+	   C4    C5    N3    O4

@@ -1,0 +1,16 @@
+[ bondtypes ]
+;     i       j  func           b0           kb 
+    CT3    HGA3     4        1.432         None
+
+ [ angletypes ] 
+;      i        j        k  func       theta0       ktheha          ub0          kub 
+     CT1      CT3     HGA3
+
+ [ dihedraltypes ] 
+;      i        j        k        l  func         phi0         kphi  mult 
+     CT3      CT1   CG321A     HGA2
+     CT3      CT1   CG321A    SG311
+
+ [ dihedraltypes ] 
+; 'improper' dihedrals 
+;      i        j        k        l  func         phi0         kphi 

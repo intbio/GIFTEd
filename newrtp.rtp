@@ -1,0 +1,724 @@
+[ CY3' ] 
+ [ atoms ] 
+        N      NH1
+       HN        H
+       CA      CT1
+       HA      HB1
+      HB2     HGA2
+      HB1     HGA2
+       CB   CG321A
+       SG    SG311
+     HAA1     HGA1
+     HAB2     HGA2
+     HAB1     HGA2
+     HC12     HGA2
+     HC11     HGA2
+     HC22     HGA2
+     HC21     HGA2
+      HYN     HGP1
+     HC42     HGA2
+     HC41     HGA2
+     HC52     HGA2
+     HC51     HGA2
+     HC62     HGA2
+     HC61     HGA2
+     HC72     HGA2
+     HC71     HGA2
+     HC82     HGA2
+     HC81     HGA2
+      HM7    HGR61
+      HM6    HGR61
+      HM4    HGR61
+     HMY3     HGA3
+     HMY2     HGA3
+     HMY1     HGA3
+     HMX3     HGA3
+     HMX2     HGA3
+     HMX1     HGA3
+      HD1     HGA4
+      HD2     HGA4
+      HD3     HGA4
+     HNY3     HGA3
+     HNY2     HGA3
+     HNY1     HGA3
+     HNX3     HGA3
+     HNX2     HGA3
+     HNX1     HGA3
+      HN8    HGR61
+      HN6    HGR61
+      HN5    HGR61
+     HE12     HGA2
+     HE11     HGA2
+     HE23     HGA3
+     HE22     HGA3
+     HE21     HGA3
+      OAD    OG2D1
+      CAD   CG2RA4
+      CAA   CG3C51
+      CAB   CG3C52
+      OAC    OG2D1
+      CAC   CG2R53
+       NX   NG2R53
+      CC1   CG321A
+      CC2   CG321A
+       NY    NG2S1
+       O3    OG2D1
+      CC3    CG2O1
+      CC4   CG321A
+      CC5   CG321A
+      CC6   CG321A
+      CC7   CG321A
+      CC8   CG324A
+      NZM   NG2R52
+      CM8   CG2RX0
+      CM7   CG2R61
+      CM6   CG2RA3
+      OM3    OG2P1
+      OM2   OG2PA1
+      OM1    OG2P1
+       SM    SG3O1
+      CM5   CG2R61
+      CM4   CG2R61
+      CM3   CG2RX0
+      CMY    CG331
+      CMX    CG331
+      CM2   CG3C50
+      CM1   CG2RA1
+      CD1   CG2DA2
+      CD2   CG2DA1
+      CD3   CG2DA0
+      CN1   CG25A0
+      CNY    CG331
+      CNX    CG331
+      CN2   CG3C50
+      CN3   CG2RX0
+      CN8   CG2R61
+      ON3    OG2P1
+      ON2   OG2PA0
+      ON1    OG2P1
+       SN   SG3OA0
+      CN7   CG2RA0
+      CN6   CG2RA2
+      CN5   CG2R61
+      CN4   CG2RX0
+      NZN   NG3CA0
+      CE1   CG321A
+      CE2    CG331
+     CLQ1      CT3
+     HLQ1     HGA3
+     HLQ2     HGA3
+     HLQ3     HGA3
+
+ [ bonds ] 
+        N     HN
+        N     CA
+       CA     HA
+       CA     CB
+      HB2     CB
+      HB1     CB
+       CB     SG
+       SG    CAA
+     HAA1    CAA
+     HAB2    CAB
+     HAB1    CAB
+     HC12    CC1
+     HC11    CC1
+     HC22    CC2
+     HC21    CC2
+      HYN     NY
+     HC42    CC4
+     HC41    CC4
+     HC52    CC5
+     HC51    CC5
+     HC62    CC6
+     HC61    CC6
+     HC72    CC7
+     HC71    CC7
+     HC82    CC8
+     HC81    CC8
+      HM7    CM7
+      HM6    CM6
+      HM4    CM4
+     HMY3    CMY
+     HMY2    CMY
+     HMY1    CMY
+     HMX3    CMX
+     HMX2    CMX
+     HMX1    CMX
+      HD1    CD1
+      HD2    CD2
+      HD3    CD3
+     HNY3    CNY
+     HNY2    CNY
+     HNY1    CNY
+     HNX3    CNX
+     HNX2    CNX
+     HNX1    CNX
+      HN8    CN8
+      HN6    CN6
+      HN5    CN5
+     HE12    CE1
+     HE11    CE1
+     HE23    CE2
+     HE22    CE2
+     HE21    CE2
+      OAD    CAD
+      CAD    CAA
+      CAD     NX
+      CAA    CAB
+      CAB    CAC
+      OAC    CAC
+      CAC     NX
+       NX    CC1
+      CC1    CC2
+      CC2     NY
+       NY    CC3
+       O3    CC3
+      CC3    CC4
+      CC4    CC5
+      CC5    CC6
+      CC6    CC7
+      CC7    CC8
+      CC8    NZM
+      NZM    CM8
+      NZM    CM1
+      CM8    CM7
+      CM8    CM3
+      CM7    CM6
+      CM6    CM5
+      OM3     SM
+      OM2     SM
+      OM1     SM
+       SM    CM5
+      CM5    CM4
+      CM4    CM3
+      CM3    CM2
+      CMY    CM2
+      CMX    CM2
+      CM2    CM1
+      CM1    CD1
+      CD1    CD2
+      CD2    CD3
+      CD3    CN1
+      CN1    CN2
+      CN1    NZN
+      CNY    CN2
+      CNX    CN2
+      CN2    CN3
+      CN3    CN8
+      CN3    CN4
+      CN8    CN7
+      ON3     SN
+      ON2     SN
+      ON1     SN
+       SN    CN7
+      CN7    CN6
+      CN6    CN5
+      CN5    CN4
+      CN4    NZN
+      NZN    CE1
+      CE1    CE2
+       CA   CLQ1
+     CLQ1   HLQ1
+     CLQ1   HLQ2
+     CLQ1   HLQ3
+
+ [ angles ] 
+       HN     N    CA
+        N    CA    HA
+        N    CA    CB
+        N    CA     C
+       HA    CA    CB
+       HA    CA     C
+       CB    CA     C
+       CA    CB   HB2
+       CA    CB   HB1
+       CA    CB    SG
+      HB2    CB   HB1
+      HB2    CB    SG
+      HB1    CB    SG
+       CB    SG   CAA
+      OAD   CAD   CAA
+      OAD   CAD    NX
+      CAA   CAD    NX
+       SG   CAA  HAA1
+       SG   CAA   CAD
+       SG   CAA   CAB
+     HAA1   CAA   CAD
+     HAA1   CAA   CAB
+      CAD   CAA   CAB
+     HAB2   CAB  HAB1
+     HAB2   CAB   CAA
+     HAB2   CAB   CAC
+     HAB1   CAB   CAA
+     HAB1   CAB   CAC
+      CAA   CAB   CAC
+      CAB   CAC   OAC
+      CAB   CAC    NX
+      OAC   CAC    NX
+      CAD    NX   CAC
+      CAD    NX   CC1
+      CAC    NX   CC1
+     HC12   CC1  HC11
+     HC12   CC1    NX
+     HC12   CC1   CC2
+     HC11   CC1    NX
+     HC11   CC1   CC2
+       NX   CC1   CC2
+     HC22   CC2  HC21
+     HC22   CC2   CC1
+     HC22   CC2    NY
+     HC21   CC2   CC1
+     HC21   CC2    NY
+      CC1   CC2    NY
+      HYN    NY   CC2
+      HYN    NY   CC3
+      CC2    NY   CC3
+       NY   CC3    O3
+       NY   CC3   CC4
+       O3   CC3   CC4
+     HC42   CC4  HC41
+     HC42   CC4   CC3
+     HC42   CC4   CC5
+     HC41   CC4   CC3
+     HC41   CC4   CC5
+      CC3   CC4   CC5
+     HC52   CC5  HC51
+     HC52   CC5   CC4
+     HC52   CC5   CC6
+     HC51   CC5   CC4
+     HC51   CC5   CC6
+      CC4   CC5   CC6
+     HC62   CC6  HC61
+     HC62   CC6   CC5
+     HC62   CC6   CC7
+     HC61   CC6   CC5
+     HC61   CC6   CC7
+      CC5   CC6   CC7
+     HC72   CC7  HC71
+     HC72   CC7   CC6
+     HC72   CC7   CC8
+     HC71   CC7   CC6
+     HC71   CC7   CC8
+      CC6   CC7   CC8
+     HC82   CC8  HC81
+     HC82   CC8   CC7
+     HC82   CC8   NZM
+     HC81   CC8   CC7
+     HC81   CC8   NZM
+      CC7   CC8   NZM
+      CC8   NZM   CM8
+      CC8   NZM   CM1
+      CM8   NZM   CM1
+      NZM   CM8   CM7
+      NZM   CM8   CM3
+      CM7   CM8   CM3
+      HM7   CM7   CM8
+      HM7   CM7   CM6
+      CM8   CM7   CM6
+      HM6   CM6   CM7
+      HM6   CM6   CM5
+      CM7   CM6   CM5
+      OM3    SM   OM2
+      OM3    SM   OM1
+      OM3    SM   CM5
+      OM2    SM   OM1
+      OM2    SM   CM5
+      OM1    SM   CM5
+      CM6   CM5    SM
+      CM6   CM5   CM4
+       SM   CM5   CM4
+      HM4   CM4   CM5
+      HM4   CM4   CM3
+      CM5   CM4   CM3
+      CM8   CM3   CM4
+      CM8   CM3   CM2
+      CM4   CM3   CM2
+     HMY3   CMY  HMY2
+     HMY3   CMY  HMY1
+     HMY3   CMY   CM2
+     HMY2   CMY  HMY1
+     HMY2   CMY   CM2
+     HMY1   CMY   CM2
+     HMX3   CMX  HMX2
+     HMX3   CMX  HMX1
+     HMX3   CMX   CM2
+     HMX2   CMX  HMX1
+     HMX2   CMX   CM2
+     HMX1   CMX   CM2
+      CM3   CM2   CMY
+      CM3   CM2   CMX
+      CM3   CM2   CM1
+      CMY   CM2   CMX
+      CMY   CM2   CM1
+      CMX   CM2   CM1
+      NZM   CM1   CM2
+      NZM   CM1   CD1
+      CM2   CM1   CD1
+      HD1   CD1   CM1
+      HD1   CD1   CD2
+      CM1   CD1   CD2
+      HD2   CD2   CD1
+      HD2   CD2   CD3
+      CD1   CD2   CD3
+      HD3   CD3   CD2
+      HD3   CD3   CN1
+      CD2   CD3   CN1
+      CD3   CN1   CN2
+      CD3   CN1   NZN
+      CN2   CN1   NZN
+     HNY3   CNY  HNY2
+     HNY3   CNY  HNY1
+     HNY3   CNY   CN2
+     HNY2   CNY  HNY1
+     HNY2   CNY   CN2
+     HNY1   CNY   CN2
+     HNX3   CNX  HNX2
+     HNX3   CNX  HNX1
+     HNX3   CNX   CN2
+     HNX2   CNX  HNX1
+     HNX2   CNX   CN2
+     HNX1   CNX   CN2
+      CN1   CN2   CNY
+      CN1   CN2   CNX
+      CN1   CN2   CN3
+      CNY   CN2   CNX
+      CNY   CN2   CN3
+      CNX   CN2   CN3
+      CN2   CN3   CN8
+      CN2   CN3   CN4
+      CN8   CN3   CN4
+      HN8   CN8   CN3
+      HN8   CN8   CN7
+      CN3   CN8   CN7
+      ON3    SN   ON2
+      ON3    SN   ON1
+      ON3    SN   CN7
+      ON2    SN   ON1
+      ON2    SN   CN7
+      ON1    SN   CN7
+      CN8   CN7    SN
+      CN8   CN7   CN6
+       SN   CN7   CN6
+      HN6   CN6   CN7
+      HN6   CN6   CN5
+      CN7   CN6   CN5
+      HN5   CN5   CN6
+      HN5   CN5   CN4
+      CN6   CN5   CN4
+      CN3   CN4   CN5
+      CN3   CN4   NZN
+      CN5   CN4   NZN
+      CN1   NZN   CN4
+      CN1   NZN   CE1
+      CN4   NZN   CE1
+     HE12   CE1  HE11
+     HE12   CE1   NZN
+     HE12   CE1   CE2
+     HE11   CE1   NZN
+     HE11   CE1   CE2
+      NZN   CE1   CE2
+     HE23   CE2  HE22
+     HE23   CE2  HE21
+     HE23   CE2   CE1
+     HE22   CE2  HE21
+     HE22   CE2   CE1
+     HE21   CE2   CE1
+       CA     C     O
+
+ [ dihedrals ] 
+       HN     N    CA    HA
+       HN     N    CA    CB
+       HN     N    CA     C
+        N    CA    CB   HB2
+        N    CA    CB   HB1
+        N    CA    CB    SG
+       HA    CA    CB   HB2
+       HA    CA    CB   HB1
+       HA    CA    CB    SG
+        N    CA     C     O
+       HA    CA     C     O
+       CB    CA     C     O
+      HB2    CB    CA     C
+      HB1    CB    CA     C
+       SG    CB    CA     C
+       CA    CB    SG   CAA
+      HB2    CB    SG   CAA
+      HB1    CB    SG   CAA
+       CB    SG   CAA  HAA1
+       CB    SG   CAA   CAD
+       CB    SG   CAA   CAB
+      OAD   CAD   CAA   CAB
+      OAD   CAD    NX   CAC
+      OAD   CAD    NX   CC1
+      CAA   CAD    NX   CAC
+      CAA   CAD    NX   CC1
+       SG   CAA   CAD   OAD
+       SG   CAA   CAD    NX
+     HAA1   CAA   CAD   OAD
+     HAA1   CAA   CAD    NX
+      CAB   CAA   CAD    NX
+       SG   CAA   CAB  HAB2
+       SG   CAA   CAB  HAB1
+       SG   CAA   CAB   CAC
+     HAA1   CAA   CAB  HAB2
+     HAA1   CAA   CAB  HAB1
+     HAA1   CAA   CAB   CAC
+      CAD   CAA   CAB   CAC
+     HAB2   CAB   CAA   CAD
+     HAB1   CAB   CAA   CAD
+     HAB2   CAB   CAC   OAC
+     HAB2   CAB   CAC    NX
+     HAB1   CAB   CAC   OAC
+     HAB1   CAB   CAC    NX
+      CAA   CAB   CAC   OAC
+      CAA   CAB   CAC    NX
+      CAB   CAC    NX   CC1
+      OAC   CAC    NX   CC1
+      CAD    NX   CAC   CAB
+      CAD    NX   CAC   OAC
+      CAD    NX   CC1   CC2
+      CAC    NX   CC1   CC2
+     HC12   CC1    NX   CAD
+     HC12   CC1    NX   CAC
+     HC11   CC1    NX   CAD
+     HC11   CC1    NX   CAC
+     HC12   CC1   CC2  HC22
+     HC12   CC1   CC2  HC21
+     HC12   CC1   CC2    NY
+     HC11   CC1   CC2  HC22
+     HC11   CC1   CC2  HC21
+     HC11   CC1   CC2    NY
+       NX   CC1   CC2    NY
+     HC22   CC2   CC1    NX
+     HC21   CC2   CC1    NX
+     HC22   CC2    NY   HYN
+     HC22   CC2    NY   CC3
+     HC21   CC2    NY   HYN
+     HC21   CC2    NY   CC3
+      CC1   CC2    NY   CC3
+      HYN    NY   CC2   CC1
+      HYN    NY   CC3    O3
+      HYN    NY   CC3   CC4
+      CC2    NY   CC3    O3
+      CC2    NY   CC3   CC4
+       NY   CC3   CC4   CC5
+       O3   CC3   CC4   CC5
+     HC42   CC4   CC3    NY
+     HC42   CC4   CC3    O3
+     HC41   CC4   CC3    NY
+     HC41   CC4   CC3    O3
+     HC42   CC4   CC5  HC52
+     HC42   CC4   CC5  HC51
+     HC42   CC4   CC5   CC6
+     HC41   CC4   CC5  HC52
+     HC41   CC4   CC5  HC51
+     HC41   CC4   CC5   CC6
+      CC3   CC4   CC5   CC6
+     HC52   CC5   CC4   CC3
+     HC51   CC5   CC4   CC3
+     HC52   CC5   CC6  HC62
+     HC52   CC5   CC6  HC61
+     HC52   CC5   CC6   CC7
+     HC51   CC5   CC6  HC62
+     HC51   CC5   CC6  HC61
+     HC51   CC5   CC6   CC7
+      CC4   CC5   CC6   CC7
+     HC62   CC6   CC5   CC4
+     HC61   CC6   CC5   CC4
+     HC62   CC6   CC7  HC72
+     HC62   CC6   CC7  HC71
+     HC62   CC6   CC7   CC8
+     HC61   CC6   CC7  HC72
+     HC61   CC6   CC7  HC71
+     HC61   CC6   CC7   CC8
+      CC5   CC6   CC7   CC8
+     HC72   CC7   CC6   CC5
+     HC71   CC7   CC6   CC5
+     HC72   CC7   CC8  HC82
+     HC72   CC7   CC8  HC81
+     HC72   CC7   CC8   NZM
+     HC71   CC7   CC8  HC82
+     HC71   CC7   CC8  HC81
+     HC71   CC7   CC8   NZM
+      CC6   CC7   CC8   NZM
+     HC82   CC8   CC7   CC6
+     HC81   CC8   CC7   CC6
+     HC82   CC8   NZM   CM8
+     HC82   CC8   NZM   CM1
+     HC81   CC8   NZM   CM8
+     HC81   CC8   NZM   CM1
+      CC7   CC8   NZM   CM8
+      CC7   CC8   NZM   CM1
+      CC8   NZM   CM8   CM7
+      CC8   NZM   CM8   CM3
+      CC8   NZM   CM1   CM2
+      CC8   NZM   CM1   CD1
+      CM8   NZM   CM1   CM2
+      CM8   NZM   CM1   CD1
+      CM7   CM8   NZM   CM1
+      CM3   CM8   NZM   CM1
+      NZM   CM8   CM7   CM6
+      NZM   CM8   CM3   CM4
+      NZM   CM8   CM3   CM2
+      CM7   CM8   CM3   CM4
+      CM7   CM8   CM3   CM2
+      HM7   CM7   CM8   NZM
+      HM7   CM7   CM8   CM3
+      CM6   CM7   CM8   CM3
+      HM7   CM7   CM6   HM6
+      HM7   CM7   CM6   CM5
+      CM8   CM7   CM6   CM5
+      HM6   CM6   CM7   CM8
+      HM6   CM6   CM5    SM
+      HM6   CM6   CM5   CM4
+      CM7   CM6   CM5    SM
+      CM7   CM6   CM5   CM4
+      OM3    SM   CM5   CM4
+      OM2    SM   CM5   CM4
+      OM1    SM   CM5   CM4
+      CM6   CM5    SM   OM3
+      CM6   CM5    SM   OM2
+      CM6   CM5    SM   OM1
+      CM6   CM5   CM4   CM3
+       SM   CM5   CM4   CM3
+      HM4   CM4   CM5   CM6
+      HM4   CM4   CM5    SM
+      HM4   CM4   CM3   CM8
+      HM4   CM4   CM3   CM2
+      CM5   CM4   CM3   CM2
+      CM8   CM3   CM4   CM5
+      CM8   CM3   CM2   CMY
+      CM8   CM3   CM2   CMX
+      CM8   CM3   CM2   CM1
+      CM4   CM3   CM2   CMY
+      CM4   CM3   CM2   CMX
+      CM4   CM3   CM2   CM1
+     HMY3   CMY   CM2   CM3
+     HMY3   CMY   CM2   CMX
+     HMY3   CMY   CM2   CM1
+     HMY2   CMY   CM2   CM3
+     HMY2   CMY   CM2   CMX
+     HMY2   CMY   CM2   CM1
+     HMY1   CMY   CM2   CM3
+     HMY1   CMY   CM2   CMX
+     HMY1   CMY   CM2   CM1
+     HMX3   CMX   CM2   CM3
+     HMX3   CMX   CM2   CMY
+     HMX3   CMX   CM2   CM1
+     HMX2   CMX   CM2   CM3
+     HMX2   CMX   CM2   CMY
+     HMX2   CMX   CM2   CM1
+     HMX1   CMX   CM2   CM3
+     HMX1   CMX   CM2   CMY
+     HMX1   CMX   CM2   CM1
+      CM3   CM2   CM1   CD1
+      CMY   CM2   CM1   CD1
+      CMX   CM2   CM1   CD1
+      NZM   CM1   CM2   CM3
+      NZM   CM1   CM2   CMY
+      NZM   CM1   CM2   CMX
+      NZM   CM1   CD1   CD2
+      CM2   CM1   CD1   CD2
+      HD1   CD1   CM1   NZM
+      HD1   CD1   CM1   CM2
+      HD1   CD1   CD2   HD2
+      HD1   CD1   CD2   CD3
+      CM1   CD1   CD2   CD3
+      HD2   CD2   CD1   CM1
+      HD2   CD2   CD3   HD3
+      HD2   CD2   CD3   CN1
+      CD1   CD2   CD3   CN1
+      HD3   CD3   CD2   CD1
+      HD3   CD3   CN1   CN2
+      HD3   CD3   CN1   NZN
+      CD2   CD3   CN1   CN2
+      CD2   CD3   CN1   NZN
+      CD3   CN1   CN2   CNY
+      CD3   CN1   CN2   CNX
+      CD3   CN1   CN2   CN3
+      CD3   CN1   NZN   CN4
+      CD3   CN1   NZN   CE1
+      CN2   CN1   NZN   CN4
+      CN2   CN1   NZN   CE1
+     HNY3   CNY   CN2   CN1
+     HNY3   CNY   CN2   CNX
+     HNY3   CNY   CN2   CN3
+     HNY2   CNY   CN2   CN1
+     HNY2   CNY   CN2   CNX
+     HNY2   CNY   CN2   CN3
+     HNY1   CNY   CN2   CN1
+     HNY1   CNY   CN2   CNX
+     HNY1   CNY   CN2   CN3
+     HNX3   CNX   CN2   CN1
+     HNX3   CNX   CN2   CNY
+     HNX3   CNX   CN2   CN3
+     HNX2   CNX   CN2   CN1
+     HNX2   CNX   CN2   CNY
+     HNX2   CNX   CN2   CN3
+     HNX1   CNX   CN2   CN1
+     HNX1   CNX   CN2   CNY
+     HNX1   CNX   CN2   CN3
+      CNY   CN2   CN1   NZN
+      CNX   CN2   CN1   NZN
+      CN3   CN2   CN1   NZN
+      CN1   CN2   CN3   CN8
+      CN1   CN2   CN3   CN4
+      CNY   CN2   CN3   CN8
+      CNY   CN2   CN3   CN4
+      CNX   CN2   CN3   CN8
+      CNX   CN2   CN3   CN4
+      CN2   CN3   CN8   CN7
+      CN2   CN3   CN4   CN5
+      CN2   CN3   CN4   NZN
+      CN8   CN3   CN4   CN5
+      CN8   CN3   CN4   NZN
+      HN8   CN8   CN3   CN2
+      HN8   CN8   CN3   CN4
+      CN7   CN8   CN3   CN4
+      HN8   CN8   CN7    SN
+      HN8   CN8   CN7   CN6
+      CN3   CN8   CN7    SN
+      CN3   CN8   CN7   CN6
+      ON3    SN   CN7   CN6
+      ON2    SN   CN7   CN6
+      ON1    SN   CN7   CN6
+      CN8   CN7    SN   ON3
+      CN8   CN7    SN   ON2
+      CN8   CN7    SN   ON1
+      CN8   CN7   CN6   CN5
+       SN   CN7   CN6   CN5
+      HN6   CN6   CN7   CN8
+      HN6   CN6   CN7    SN
+      HN6   CN6   CN5   HN5
+      HN6   CN6   CN5   CN4
+      CN7   CN6   CN5   CN4
+      HN5   CN5   CN6   CN7
+      HN5   CN5   CN4   CN3
+      HN5   CN5   CN4   NZN
+      CN6   CN5   CN4   NZN
+      CN3   CN4   CN5   CN6
+      CN3   CN4   NZN   CE1
+      CN5   CN4   NZN   CE1
+      CN1   NZN   CN4   CN3
+      CN1   NZN   CN4   CN5
+      CN1   NZN   CE1   CE2
+      CN4   NZN   CE1   CE2
+     HE12   CE1   NZN   CN1
+     HE12   CE1   NZN   CN4
+     HE11   CE1   NZN   CN1
+     HE11   CE1   NZN   CN4
+     HE12   CE1   CE2  HE23
+     HE12   CE1   CE2  HE22
+     HE12   CE1   CE2  HE21
+     HE11   CE1   CE2  HE23
+     HE11   CE1   CE2  HE22
+     HE11   CE1   CE2  HE21
+     HE23   CE2   CE1   NZN
+     HE22   CE2   CE1   NZN
+     HE21   CE2   CE1   NZN
+
+ [ impropers ] 
+      CAD   CAA    NX   OAD
+      CAC   CAB    NX   OAC
+      CC3   CC4    NY    O3
