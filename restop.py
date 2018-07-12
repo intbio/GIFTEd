@@ -197,7 +197,7 @@ class resType:
         """Adds a RDKit atom type to a res molecule with PDB residue info and bonds it with desirable"""
         orderdict = {'single': Chem.rdchem.BondType.SINGLE, 'double': Chem.rdchem.BondType.DOUBLE, 'triple': Chem.rdchem.BondType.TRIPLE, 'aromatic': Chem.rdchem.BondType.AROMATIC}
         if atomname in self.atomtypes:
-            write['Name already taken']
+            print('Name already taken!')
         else:
             idx = self.mol.GetNumAtoms()
             edmol = Chem.EditableMol(self.mol)
