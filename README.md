@@ -8,6 +8,8 @@ This library allows to:
 - add parameters to FF;
 - write new .rtp and .itp files.
 
+
+
 ### What else do you need?
 In order for GIFtEd to work, you should have following packages installed:
 - RDKit;
