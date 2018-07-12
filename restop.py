@@ -147,6 +147,7 @@ class resType:
         self.rtpdefangles = rtpdefangles
         self.rtpdefdihedrals = rtpdefdihedrals
         self.rtpdefimps = rtpdefimps
+        self.extraff = None    # Not parametrized FF
         self.itpfoundimps = []
         self.atomnums = {}
         for atom in self.mol.GetAtoms():
@@ -161,9 +162,8 @@ class resType:
             
         self.ff = ff       # Parametrized FF    
         
-        
     def WriteExtraFF(self):
-        self.extraff = ffCommon()     # Not parametrized FF
+        self.extraff = ffCommon()
         self.xbonds = newDict()
         self.xangles = newDict()
         self.xdihedrals = newDict()
@@ -515,68 +515,86 @@ class resType:
         self.itpfoundroundimps = roundimps[:]
             
     def SetBondParams(self, bond, f=None, b0=None, kb=None):
-        if f:
-            self.extraff.Bonded.bonds[bond].func = f
-        if b0:
-            self.extraff.Bonded.bonds[bond].length = b0
-        if kb:
-            self.extraff.Bonded.bonds[bond].fconstant = kb
+        """Sets some bondType parameter in non-parametrized force field"""
+        if not self.extraff:
+            print("No unparametrized ff detected! Either you're good, or haven't called 'res.WriteExtraFF()' function. Try the latter.")
+        else:
+            if f:
+                self.extraff.Bonded.bonds[bond].func = f
+            if b0:
+                self.extraff.Bonded.bonds[bond].length = b0
+            if kb:
+                self.extraff.Bonded.bonds[bond].fconstant = kb
             
     def SetAngleParams(self, angle, f=None, theta0=None, ktheha=None, ub0=None, kub=None):
-        if f:
-            self.extraff.Bonded.angles[angle].func = f
-        if theta0:
-            self.extraff.Bonded.angles[angle].angle = theta0
-        if ktheha:
-            self.extraff.Bonded.angles[angle].fconstant = ktheha
-        if ub0:
-            self.extraff.Bonded.angles[angle].ubval = ub0
-        if kub:
-            self.extraff.Bonded.angles[angle].ubfconstant = kub
+        """Sets some angleType parameter in non-parametrized force field"""
+        if not self.extraff:
+            print("No unparametrized ff detected! Either you're good, or haven't called 'res.WriteExtraFF()' function. Try the latter.")
+        else:
+            if f:
+                self.extraff.Bonded.angles[angle].func = f
+            if theta0:
+                self.extraff.Bonded.angles[angle].angle = theta0
+            if ktheha:
+                self.extraff.Bonded.angles[angle].fconstant = ktheha
+            if ub0:
+                self.extraff.Bonded.angles[angle].ubval = ub0
+            if kub:
+                self.extraff.Bonded.angles[angle].ubfconstant = kub
             
     def SetDihedralParams(self, dihedral, f = None, phi0=None, kphi=None, mult=None):
-        if f:
-            self.extraff.Bonded.dihedrals[dihedral].func = f
-        if phi0:
-            self.extraff.Bonded.dihedrals[dihedral].angle = phi0
-        if kphi:
-            self.extraff.Bonded.dihedrals[dihedral].fconstant = kphi
-        if mult:
-            self.extraff.Bonded.dihedrals[dihedral].mult = mult
+        """Sets some dihedralType parameter in non-parametrized force field"""
+        if not self.extraff:
+            print("No unparametrized ff detected! Either you're good, or haven't called 'res.WriteExtraFF()' function. Try the latter.")
+        else:
+            if f:
+                self.extraff.Bonded.dihedrals[dihedral].func = f
+            if phi0:
+                self.extraff.Bonded.dihedrals[dihedral].angle = phi0
+            if kphi:
+                self.extraff.Bonded.dihedrals[dihedral].fconstant = kphi
+            if mult:
+                self.extraff.Bonded.dihedrals[dihedral].mult = mult
             
     def SetImproperParams(self, dihedral, f = None, phi0=None, kphi=None):
-        if f:
-            self.extraff.Bonded.impropers[improper].func = f
-        if phi0:
-            self.extraff.Bonded.impropers[improper].angle = phi0
-        if kphi:
-            self.extraff.Bonded.impropers[improper].fconstant = kphi
-        if mult:
-            self.extraff.Bonded.dihedrals[dihedral].mult = mult
+        """Sets some improperType parameter in non-parametrized force field"""
+        if not self.extraff:
+            print("No unparametrized ff detected! Either you're good, or haven't called 'res.WriteExtraFF()' function. Try the latter.")
+        else:
+            if f:
+                self.extraff.Bonded.impropers[improper].func = f
+            if phi0:
+                self.extraff.Bonded.impropers[improper].angle = phi0
+            if kphi:
+                self.extraff.Bonded.impropers[improper].fconstant = kphi
+            if mult:
+                self.extraff.Bonded.dihedrals[dihedral].mult = mult
     
     def WriteSuppBonded(self, fname='newitp.itp'):  
         """Writes a supporting itp file with not-parametrized bonds, angles, dihedrals, impropers (if defined in rtp)"""
-       # self.WriteExtraFF()
-        with open(fname, 'w') as f:
-            f.write('[ bondtypes ]\n')
-            f.write(';'+ '%6s %7s %5s %12s %12s \n' %('i','j','func','b0','kb'))
-            for bond in self.extraff.Bonded.bonds:
-                btype = self.extraff.Bonded.bonds[bond]
-                f.write('%7s %7s' %bond+' %5s %12s %12s'%(btype.func, btype.length,btype .fconstant)+'\n')
-            f.write('\n [ angletypes ] \n')
-            f.write(';' + '%7s %8s %8s %5s %12s %12s %12s %12s \n' %('i','j','k','func','theta0','ktheha','ub0','kub'))
-            for angle in  self.extraff.Bonded.angles:
-                f.write('%8s %8s %8s' %angle + '\n')
-            f.write('\n [ dihedraltypes ] \n')
-            f.write(';'+'%7s %8s %8s %8s %5s %12s %12s %5s \n' %('i','j','k','l','func','phi0','kphi','mult'))
-            for dihedral in  self.extraff.Bonded.dihedrals:
-                f.write('%8s %8s %8s %8s' %dihedral + '\n')
-            f.write('\n [ dihedraltypes ] \n')
-            f.write("; 'improper' dihedrals \n")
-            f.write(';'+'%7s %8s %8s %8s %5s %12s %12s \n' %('i','j','k','l','func','phi0','kphi'))
-            for improper in  self.extraff.Bonded.impropers:
-                f.write('%8s %8s %8s %8s' %improper + '\n')
-                
+        if self.extraff:
+            with open(fname, 'w') as f:
+                f.write('[ bondtypes ]\n')
+                f.write(';'+ '%6s %7s %5s %12s %12s \n' %('i','j','func','b0','kb'))
+                for bond in self.extraff.Bonded.bonds:
+                    btype = self.extraff.Bonded.bonds[bond]
+                    f.write('%7s %7s' %bond+' %5s %12s %12s'%(btype.func, btype.length,btype .fconstant)+'\n')
+                f.write('\n [ angletypes ] \n')
+                f.write(';' + '%7s %8s %8s %5s %12s %12s %12s %12s \n' %('i','j','k','func','theta0','ktheha','ub0','kub'))
+                for angle in  self.extraff.Bonded.angles:
+                    f.write('%8s %8s %8s' %angle + '\n')
+                f.write('\n [ dihedraltypes ] \n')
+                f.write(';'+'%7s %8s %8s %8s %5s %12s %12s %5s \n' %('i','j','k','l','func','phi0','kphi','mult'))
+                for dihedral in  self.extraff.Bonded.dihedrals:
+                    f.write('%8s %8s %8s %8s' %dihedral + '\n')
+                f.write('\n [ dihedraltypes ] \n')
+                f.write("; 'improper' dihedrals \n")
+                f.write(';'+'%7s %8s %8s %8s %5s %12s %12s \n' %('i','j','k','l','func','phi0','kphi'))
+                for improper in  self.extraff.Bonded.impropers:
+                    f.write('%8s %8s %8s %8s' %improper + '\n')
+        else:
+            print("No unparametrized ff detected! Either you're good, or haven't called 'res.WriteExtraFF()' function. Try the latter.") 
+                    
     def WriteRtp(self, fname = 'newrtp.rtp'):
         with open(fname, 'w') as f:
             f.write('[ '+self.name+' ] \n')
