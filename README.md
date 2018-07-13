@@ -1,5 +1,5 @@
-# GIFtEd
-Gromacs Interactive Forcefield Editor
+# GIFTEd
+Gromacs Interactive Topology & Force-field Editor
 ### Annotation
 This library allows to:
 - read .rtp and .itp files to create Residue and Force Field objects;
