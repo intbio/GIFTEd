@@ -1,4 +1,5 @@
 import math
+import random
 import numpy as np
 from numpy.linalg import norm
 from itertools import combinations, permutations
@@ -92,7 +93,7 @@ def atomanglewedge(x, y, ax, t):
 
 def bezier(xlist, ylist, ax, color):
     # Gets list of x coords, list of y coords & editable molecule
-    k = 0.9
+    k = 1.2
     gx1 = xlist[0]
     gx2 = xlist[1]
     gx3 = xlist[2]
@@ -114,11 +115,11 @@ def bezier(xlist, ylist, ax, color):
     bc = [cx0-cx1, cy0-cy1]
     cd = [x1-cx1, y1-cy1]
     # Case they're almost on the same line -- moving the control point perpendicularly to them
-    if np.abs(np.dot(ab, bc)/(norm(ab)*norm(bc)))>=0.95:
+    if np.abs(np.dot(ab, bc)/(norm(ab)*norm(bc)))>=0.9:
         dv = [cy0-y0, x0-cx0]/norm([cy0-y0, x0-cx0])
         cx0+=dv[0]*k
         cy0+=dv[1]*k
-    if np.abs(np.dot(bc, cd)/(norm(bc)*norm(cd)))>=0.95:
+    if np.abs(np.dot(bc, cd)/(norm(bc)*norm(cd)))>=0.9:
         dv = [cy0-cy1, cx1-cx0]/norm([cy0-cy1, cx1-cx0])
         cx1+=dv[0]*k
         cy1+=dv[1]*k
@@ -139,11 +140,13 @@ def bezier(xlist, ylist, ax, color):
 
 class resType:    
     """Class to keep and work with all the residues in. \n     Includes: .name -- a residue name, .mol -- corresponding mol obj, .ff -- ffCommon obj, atomtypes, atomnums,     numtypes -- dicts, rtpdefimps -- impropers defined in rtp file, itpfoundimps -- impropers from itp file     that exist in this molecule"""
-    def __init__(self, name = '', mol = Chem.MolFromSmiles(''), atomtypes = {}, rtpdefangles = [], rtpdefdihedrals = [], rtpdefimps = [], ff=ffCommon()):
+    def __init__(self, name = '', mol = Chem.MolFromSmiles(''), atomtypes = {}, rtpdefatoms=[], rtpdefbonds=[], rtpdefangles = [], rtpdefdihedrals = [], rtpdefimps = [], ff=ffCommon()):
         self.name = name
         self.error = None
         self.mol = mol
         self.atomtypes = atomtypes
+        self.rtpdefatoms = rtpdefatoms
+        self.rtpdefbonds = rtpdefbonds
         self.rtpdefangles = rtpdefangles
         self.rtpdefdihedrals = rtpdefdihedrals
         self.rtpdefimps = rtpdefimps
@@ -707,6 +710,7 @@ class resType:
                     atomanglewedge(x, y, ax, t)
             
         if ShowMissingDihedrals == True:
+            randcolors = ['#B22222', '#DC143C', '#FF0000', '#FF7F50', '#FF8C00', '#DAA520', '#EEE8AA', '#8A2BE2', '#4B0082', '#8B008B', '#9932CC', '#C71585', '#DB7093', '#A0522D', '#D2691E', '#CD853F', '#F4A460', '#BC8F8F']
             missingdihedrals = self.CheckDihedrals()  
             for dihedral in self.FindMolDihedrals():
                 xi = []
@@ -720,7 +724,7 @@ class resType:
                         posi = m.GetConformer().GetAtomPosition(namenums[atname])
                         xi.append(posi.x)
                         yi.append(posi.y)
-                    bezier(xi, yi, ax, '#B22222')
+                    bezier(xi, yi, ax, random.choice(randcolors))
             
         for bond in m.GetBonds():   
             at1 = bond.GetBeginAtomIdx()

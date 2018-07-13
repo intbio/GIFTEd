@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 class newDict():
     def __init__(self):
         self.dict = {}
@@ -24,7 +18,17 @@ class newDict():
     def __iter__(self):
         for x in self.dict:
             yield x
-            
+
+class atomType:
+    def __init__(self, atype = None, anum = None, mass = None, charge = None, ptype = None, sigma = None, epsilon = None):
+        self.atype = atype
+        self.anum = anum
+        self.mass = mass
+        self.charge = charge
+        self.ptype = ptype
+        self.sigma = sigma
+        self.epsilon = epsilon            
+
 class bondType:
     def __init__(self, atypes=None, func=None, length=None, fconstant=None):
         self.atypes=atypes
@@ -73,13 +77,14 @@ class ffBonded:
         
 class ffNonBonded:
     """Class to store all the non-bonded interactions in FF"""
-    def __init__(self, pairs = newDict()):
+    def __init__(self, atoms = {}, pairs = newDict()):
+        self.atoms = atoms
         self.pairs = pairs
                                 
 
 class ffCommon:
     """Simply unites Bonded and NonBonded classes"""
-    def __init__(self, Bonded = ffBonded(), NonBonded = ffNonBonded()):
+    def __init__(self, Bonded = ffBonded(), NonBonded = ffNonBonded(), defdict = {}):
         self.Bonded = Bonded
         self.NonBonded = NonBonded
-
+        self.defdict = defdict
