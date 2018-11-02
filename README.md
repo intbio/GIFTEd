@@ -15,3 +15,12 @@ In order for GIFtEd to work, you should have following packages installed:
 - RDKit;
 - NumPy;
 - Matplotlib.
+
+
+### Current issues:
+- pdb writer + pdb2gmx check
+- comments, empty slots, base class of ff parameters (func type and comments included)
+- charges 
+- writing an rtp header with basic func types 
+- pairs for VdW for non-bonded
+- all other kinds of files?? (hdb and stuff)
