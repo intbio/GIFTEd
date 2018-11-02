@@ -11,8 +11,8 @@ from rdkit.Chem.Draw import MolDrawing, DrawingOptions
 import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 
-from intparams import *
-from restop import *
+from GIFtEd_usable.intparams import *
+from GIFtEd_usable.restop import *
 
 
 def rtpreader(*rtpfiles, ff = ffCommon()):   # NEEDS A LOT OF EXTRA FEATURES
@@ -82,7 +82,7 @@ def rtpreader(*rtpfiles, ff = ffCommon()):   # NEEDS A LOT OF EXTRA FEATURES
                                     try: 
                                         mw.AddBond(n1, n2, order = Chem.rdchem.BondType.SINGLE)
                                     except RuntimeError:
-                                        errorlist.append(resname, (name1, name2))
+                                        errorlist.append((resname, (name1, name2)))
                             if len(sline)>2:
                                 atypes = (name1, name2)
                                 rtpdefbonds.append([atypes, sline[2:]])
