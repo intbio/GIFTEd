@@ -19,6 +19,7 @@ In order for GIFtEd to work, you should have following packages installed:
 
 ### Current issues:
 - pdb writer + pdb2gmx check
+- adding bonds + retyping/renaming atoms
 - comments, empty slots, base class of ff parameters (func type and comments included)
 - charges 
 - writing an rtp header with basic func types 

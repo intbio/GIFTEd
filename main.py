@@ -26,6 +26,7 @@ def rtpreader(*rtpfiles, ff = ffCommon()):   # NEEDS A LOT OF EXTRA FEATURES
     sline = []
     atomnums = {}   # Name: number
     ff_atypes = {}    # Name: FF type
+    atomcharges = {}
     btypes = {}
     i = 0
     resdict = {}
@@ -45,12 +46,13 @@ def rtpreader(*rtpfiles, ff = ffCommon()):   # NEEDS A LOT OF EXTRA FEATURES
                         if sline[1] in modeslist: # and it could be a mode --
                             mode = sline[1]         # it's a mode.
                         else:                               #If it can't be a mode, it's a residue name
-                            resdict[resname] = resType(resname, mw.GetMol(), ff_atypes, rtpdefatoms, rtpdefbonds, rtpdefangles, rtpdefdihedrals, rtpdefimps) # Adding the mol to res dict
+                            resdict[resname] = resType(resname, mw.GetMol(), ff_atypes, atomcharges, rtpdefatoms, rtpdefbonds, rtpdefangles, rtpdefdihedrals, rtpdefimps) # Adding the mol to res dict
                             resname = sline[1]                        # Changing the name
                             mol = Chem.MolFromSmiles('')              # Resetting mol & dicts & mode & counter
                             mw = Chem.EditableMol(mol)
                             atomnums = {}
                             ff_atypes = {} 
+                            atomcharges = {}
                             mode = ''
                             i = 0
                             rtpdefbonds = []
@@ -71,7 +73,11 @@ def rtpreader(*rtpfiles, ff = ffCommon()):   # NEEDS A LOT OF EXTRA FEATURES
                                 atomnums[name]=i                # Dict: what number in RDKit is an atom with this name
                                 i+=1
                             if len(sline)>2:   # If something more than atomname-atomtype is defined
-                                rtpdefatoms.append([atype, sline[2:]])
+                                rtpdefatoms.append([atype, sline[2:]]
+                                try:
+                                    atomcharges[i]=Decimal(sline[3])
+                                except:
+                                    atomcharges[i]=None
                         elif mode == 'bonds':
                             name1 = sline[0]      # Getting names of bonded atoms
                             name2 = sline[1]
@@ -134,27 +140,49 @@ def itpreader(*itpfiles):
                             mode = sline[1]
                         else:
                             if mode == 'atomtypes': 
-                                atom = atomType(atype = sline[0], anum = sline[1], mass = sline[2], charge = sline[3], ptype = sline[4], sigma = float(sline[5]), epsilon = float(sline[6]))
-                                atoms[atom.atype] = atom
+                                try:
+                                    atom = atomType(atype = sline[0], anum = sline[1], mass = sline[2], charge = sline[3], ptype = sline[4], sigma = float(sline[5]), epsilon = float(sline[6]))
+                                    atoms[atom.atype] = atom
+                                except IndexError:
+                                    print('Following atom lacks parameters: '+sline[0]'. It was not added to the parametrized force field.')
                             elif mode == 'bondtypes':
-                                bond = bondType(atypes=sline[0:2],func=sline[2],length=sline[3],fconstant=sline[4])
-                                bonds[bond.atypes] = bond
+                                try:
+                                    bond = bondType(atypes=sline[0:2],func=sline[2],length=sline[3],fconstant=sline[4])
+                                    bonds[bond.atypes] = bond
+                                except IndexError:
+                                    print('Following bond lacks parameters: '+sline[0:2]'. It was not added to the parametrized force field.')
 
                             elif mode == 'angletypes':
-                                angle = angleType(atypes=sline[0:3], func=sline[3], angle=sline[4], fconstant=sline[5],                                               ubval=sline[6], ubfconstant=sline[7])
-                                angles[angle.atypes] = angle
+                                try:
+                                    angle = angleType(atypes=sline[0:3], func=sline[3], angle=sline[4], fconstant=sline[5],                                               ubval=sline[6], ubfconstant=sline[7])
+                                   angles[angle.atypes] = angle
+                                except IndexError:
+                                    print('Following angle lacks parameters: '+sline[0:3]'. It was not added to the parametrized force field.')
 
                             elif mode == 'dihedraltypes':
-                                if sline[4]=='2' or sline[4]=='4':
-                                    improper = improperType(atypes = sline[0:4], func = sline[4], angle = sline[5],                                                         fconstant = sline[6])
-                                    impropers[improper.atypes] = improper
+                                try:
+                                    f = sline[4]
+                                    if sline[4]=='2' or sline[4]=='4':
+                                        try:
+                                            improper = improperType(atypes = sline[0:4], func = sline[4], angle = sline[5],                                                         fconstant = sline[6])
+                                            impropers[improper.atypes] = improper
+                                        except IndexError:
+                                            print('Following dihedral lacks parameters: '+sline[0:4]'. It was not added to the parametrized force field.')
 
-                                else:
-                                    dihedral = dihedralType(atypes = sline[0:4], func = sline[4], angle = sline[5],                                                     fconstant = sline[6], mult = sline[7])
-                                    dihedrals[dihedral.atypes] = dihedral
+                                    else:
+                                        try:
+                                            dihedral = dihedralType(atypes = sline[0:4], func = sline[4], angle = sline[5],                                                     fconstant = sline[6], mult = sline[7])
+                                            dihedrals[dihedral.atypes] = dihedral
+                                        except IndexError:
+                                            print('Following improper lacks parameters: '+sline[0:4]'. It was not added to the parametrized force field.')
+                               except IndexError:
+                                    print('Following dihedral lacks parameters: '+sline[0:4]'. It was not added to the parametrized force field.')
                             elif mode == 'pairtypes':
-                                pair = pairType(sline[0:2], sline[2], sline[3], sline[4])
-                                pairs[pair.atypes] = pair
+                                try:
+                                    pair = pairType(sline[0:2], sline[2], sline[3], sline[4])
+                                    pairs[pair.atypes] = pair
+                                except IndexError:
+                                    print('Following bond lacks parameters: '+sline[0:2]'. It was not added to the parametrized force field.')
                     if sline[0] == '#endif':
                         ifcounter-=1        
     ff = ffCommon(ffBonded(bonds, angles, dihedrals, impropers), ffNonBonded(atoms, pairs), defdict)

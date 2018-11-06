@@ -137,14 +137,14 @@ def bezier(xlist, ylist, ax, color):
 
 # In[4]:
 
-
 class resType:    
     """Class to keep and work with all the residues in. \n     Includes: .name -- a residue name, .mol -- corresponding mol obj, .ff -- ffCommon obj, atomtypes, atomnums,     numtypes -- dicts, rtpdefimps -- impropers defined in rtp file, itpfoundimps -- impropers from itp file     that exist in this molecule"""
-    def __init__(self, name = '', mol = Chem.MolFromSmiles(''), atomtypes = {}, rtpdefatoms=[], rtpdefbonds=[], rtpdefangles = [], rtpdefdihedrals = [], rtpdefimps = [], ff=ffCommon()):
+    def __init__(self, name = '', mol = Chem.MolFromSmiles(''), atomtypes = {}, atomcharges = {}, rtpdefatoms=[], rtpdefbonds=[], rtpdefangles = [], rtpdefdihedrals = [], rtpdefimps = [], ff=ffCommon()):
         self.name = name
         self.error = None
         self.mol = mol
         self.atomtypes = atomtypes
+        self.atomcharges = atomcharges  # atom idx: rtp-defined charge
         self.rtpdefatoms = rtpdefatoms
         self.rtpdefbonds = rtpdefbonds
         self.rtpdefangles = rtpdefangles
@@ -244,6 +244,9 @@ class resType:
             if self.atomnums[aname]!=ai:
                 print(ai)
         
+    def ChangeAtomType(self, aidx=0, newtype=''):
+        
+    
     def FindMolAngles(self):
         """Returns a list of all angles in the molecule"""
         angles = []
