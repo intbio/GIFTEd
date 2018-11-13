@@ -1,0 +1,26 @@
+package:
+  name: gifted
+  version: 0.0.0
+
+source:
+  git_url: https://github.com/intbio/GIFTEd.git
+
+requirements:
+  build:
+    - git
+    
+  host:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - numpy
+    - rdkit
+    - matplotlib 2.2.2
+
+about:
+  home: https://github.com/intbio/GIFTEd
+  license: GPL
+  license_file: LICENSE
+
